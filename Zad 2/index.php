@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Logowanie</title>
 
 </head>
 <body>
+
+
+
+<div class="con">
+<form method="post">
+    <h1>Logowanie</h1>
+    <label for="username">Login:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="password">Hasło:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <button type="submit">Zaloguj</button>
+</form>
+</div>
+
 
 <?php
     
@@ -17,25 +34,15 @@
 
       
         if ($usernameInput === "admin" && $passwordInput === "test") {
-            echo "<p>Zalogowano pomyślnie</p>";
-        
+            $message = "Zalogowano prawidlowo";
+            echo "<script type='text/javascript'>alert('$message');</script>";
         } 
         else {
-            echo "<p>Błąd, wprowadzono złe dane</p>";
+            $message = "Błąd, wprowadzono złe dane";
+            echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }
 ?>
-
-<form method="post">
-    <h2>Logowanie</h2>
-    <label for="username">Login:</label>
-    <input type="text" id="username" name="username" required><br>
-
-    <label for="password">Hasło:</label>
-    <input type="password" id="password" name="password" required><br>
-
-    <button type="submit">Zaloguj</button>
-</form>
 
 </body>
 </html>
